@@ -9,27 +9,27 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.app.pojos.Product;
-import com.app.service.ProductService;
+import com.app.pojos.Category;
+import com.app.service.CategoryService;
 
 @RestController
-@RequestMapping("/product")
-public class ProductController {
+@RequestMapping("/category")
+public class CategoryController {
 	@Autowired
-	private ProductService prodServ;
+	private CategoryService catService;
 
-	public ProductController() {
+	public CategoryController() {
 		super();
 	}
 
 	@GetMapping
-	private List<Product> AllProducts() {
-		return prodServ.getAllProducts();
+	private List<Category> AllCategory() {
+		return catService.getAllCategories();
+
 	}
 
 	@PostMapping
-	private Product AddProduct(@RequestBody Product newProduct) {
-		return prodServ.AddProducts(newProduct);
+	private Category AddCategory(@RequestBody Category newCategory) {
+		return catService.addCategory(newCategory);
 	}
-
 }

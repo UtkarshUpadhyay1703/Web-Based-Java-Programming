@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -17,7 +18,7 @@ public class Category extends BaseEntity {
 	private String description;
 	private int sales;
 
-	@OneToMany(mappedBy = "productCategory")
+	@OneToMany(mappedBy = "productCategory",fetch = FetchType.EAGER)
 	private List<Product> catProd =new ArrayList<Product>();
 
 	public Category() {
@@ -67,6 +68,7 @@ public class Category extends BaseEntity {
 	public String toString() {
 		return "Category ID = "+getId()+" [name=" + name + ", description=" + description + ", sales=" + sales + "]";
 	}
+	
 	
 	
 }

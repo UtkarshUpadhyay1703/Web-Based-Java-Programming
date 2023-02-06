@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.app.pojos.Category;
+import com.app.pojos.Product;
 import com.app.service.CategoryService;
 
 @RestController
@@ -31,5 +32,10 @@ public class CategoryController {
 	@PostMapping
 	private Category AddCategory(@RequestBody Category newCategory) {
 		return catService.addCategory(newCategory);
+	}
+	
+	@PostMapping("/product")
+	private Product AddCatProduct(@RequestBody Product newProduct) {
+		return catService.addProduct(newProduct);
 	}
 }

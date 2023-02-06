@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.app.dto.LoginDTO;
 import com.app.pojos.Product;
 import com.app.service.ProductService;
 
@@ -30,6 +31,10 @@ public class ProductController {
 	@PostMapping
 	private Product AddProduct(@RequestBody Product newProduct) {
 		return prodServ.AddProducts(newProduct);
+	}
+	@PostMapping("/login")
+	private Product LoginProduct(@RequestBody LoginDTO dto) {
+		return prodServ.loginProduct(dto);
 	}
 
 }

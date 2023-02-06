@@ -69,6 +69,13 @@ public class Category extends BaseEntity {
 		return "Category ID = "+getId()+" [name=" + name + ", description=" + description + ", sales=" + sales + "]";
 	}
 	
+	public Product addProduct(Product p) {
+		catProd.add(p);
+		p.setProductCategory(this);
+		return p;
+	}
+	
+	
 	
 	
 }

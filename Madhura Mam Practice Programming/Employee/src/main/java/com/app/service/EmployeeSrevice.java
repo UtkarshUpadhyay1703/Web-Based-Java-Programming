@@ -10,4 +10,5 @@ public interface EmployeeSrevice {
 	Employee loginEmp(LoginEmployee empDto);
 	Employee addEmployee(Employee emp);
 	void deleteEmployee(Long id);
+	Employee updateEmployee(Employee emp);
 }

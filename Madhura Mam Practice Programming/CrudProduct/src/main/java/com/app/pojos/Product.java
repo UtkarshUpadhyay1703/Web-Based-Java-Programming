@@ -4,6 +4,8 @@ import java.time.LocalDate;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "prod_tbl")
 public class Product extends BaseEntity{
@@ -15,7 +17,8 @@ public class Product extends BaseEntity{
 	@Column(name = "quantity")
 	private int qty;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="prod_cat_fk")
 	private Category productCategory;
 
